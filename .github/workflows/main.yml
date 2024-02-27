@@ -18,17 +18,26 @@ jobs:
       - name: Run Python Script
         run: python Scraping/script.py  # Replace with the name of your Python script
 
-      - name: Find Latest File
-        id: find_latest
-        run: |
-          latest_file=$(ls -t output2023-2024.csv* | head -n1)
-          echo "::set-output name=file_name::$latest_file"
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with: 
+          add: 'Scraping'
+          message: "Update target data"
+          default_author: github_actions
+          push: true
+
+      # - name: Find Latest File
+      #   id: find_latest
+      #   run: |
+      #     latest_file=$(ls -t output2023-2024.csv* | head -n1)
+      #     echo "::set-output name=file_name::$latest_file"
       
-      - name: Save Latest File as Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: generated-file  # Specify the name of the artifact
-          path: ${{ steps.find_latest.outputs.file_name }}
+      # - name: Save Latest File as Artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: generated-file  # Specify the name of the artifact
+      #     path: ${{ steps.find_latest.outputs.file_name }}
+          
 
       # - name: Save File as Artifact
       #   uses: actions/upload-artifact@v2
