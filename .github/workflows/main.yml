@@ -1,6 +1,6 @@
 name: data collection
 # 'on': push
-on: [push]
+# on: [push]
 # on:
   # schedule:
     # - cron: "30 11 * * *"    #runs at 11:30 UTC everyday
