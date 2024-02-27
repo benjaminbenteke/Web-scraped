@@ -200,13 +200,13 @@ dt.sort_values(by='Week', ascending=False)
 #dt.to_csv("./new_files/"+"data_"+str(wk)+'.csv', index= False)
 dt.to_csv("Scraping/data_"+str(wk)+'.csv', index= False)
 
-past_data= pd.read_csv("Scraping/RVDSS_all_Canada.csv")
+past_data= pd.read_csv("../Scraping/RVDSS_all_Canada.csv")
 
 dt= pd.concat([past_data, dt], axis= 1)
 
 
 df_no_duplicates = dt.drop_duplicates()
 
-dt.to_csv(csv_filename, index= False)
+dt.to_csv("../Scraping/"+csv_filename, index= False)
 
 ## END
