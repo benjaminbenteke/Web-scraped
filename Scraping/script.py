@@ -198,9 +198,9 @@ dt = df_reordered.reset_index(drop=True)
 dt.sort_values(by='Week', ascending=False)
 
 #dt.to_csv("./new_files/"+"data_"+str(wk)+'.csv', index= False)
-dt.to_csv("./data_"+str(wk)+'.csv', index= False)
+dt.to_csv("Scraping/data_"+str(wk)+'.csv', index= False)
 
-past_data= pd.read_csv("./RVDSS_all_Canada.csv")
+past_data= pd.read_csv("Scraping/RVDSS_all_Canada.csv")
 
 dt= pd.concat([past_data, dt], axis= 1)
 
