@@ -1,12 +1,12 @@
 name: data collection
-'on': push
-# on:
-# on: [push]
-# on:
-  # schedule:
-    # - cron: "30 11 * * *"    #runs at 11:30 UTC everyday
-    # - cron: '35 02,02 * * *'
-# - cron: '0 08 * * 1' # runs at 08:00 UTC on Mondays
+
+# 'on': push
+#       schedule:
+#       - cron: '0 08 * * 1' # runs at 08:00 UTC on Mondays
+# 'on': push
+on:
+  schedule:
+    - cron: '30 11 * * *'    #runs at 11:30 UTC everyday
 jobs:
   my-job:
     runs-on: ubuntu-latest
