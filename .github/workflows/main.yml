@@ -1,0 +1,13 @@
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Run every 5 minutes
+
+jobs:
+  save_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Web-scrapeda
+        uses: actions/checkout@v2
+
+      - name: Run Python Script
+        run: python Scraping/script.py  # Replace with the name of your Python script
