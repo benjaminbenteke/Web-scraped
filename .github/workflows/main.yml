@@ -1,5 +1,5 @@
 name: data collection
-# 'on': push
+'on': push
 # on: [push]
 # on:
   # schedule:
