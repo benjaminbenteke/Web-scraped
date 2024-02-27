@@ -1,5 +1,6 @@
 name: data collection
 'on': push
+# on:
 # on: [push]
 # on:
   # schedule:
@@ -30,7 +31,8 @@ jobs:
           add: 'Scraping'
           message: "Update data"
           default_author: github_actions
-          push: true
+          token: ${{ secrets.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 }}
+          # push: true
 
       # - name: Find Latest File
       #   id: find_latest
