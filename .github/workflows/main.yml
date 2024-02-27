@@ -1,8 +1,11 @@
-name: hello-world
+name: data collection
 'on': push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: touch 'ben.py'
+      - name: Checkout Web-scraped
+        uses: actions/checkout@v2
+
+      - name: Run Python Script
+        run: python Scraping/script.py  # Replace with the name of your Python script
