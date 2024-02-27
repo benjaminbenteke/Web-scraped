@@ -23,4 +23,4 @@ jobs:
         with:
           name: generated-files  # Specify the name of the artifact
           path: |
-            $(find . -output "*.txt")
+            $(find . -name "output*" -type f)
