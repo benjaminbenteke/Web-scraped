@@ -196,6 +196,7 @@ df_reordered["Reporting Laboratory"].value_counts()
 dt = df_reordered.reset_index(drop=True)
 
 dt.sort_values(by='Week', ascending=False)
+dt = dt[dt['Week'] == str(wk)]
 
 #dt.to_csv("./new_files/"+"data_"+str(wk)+'.csv', index= False)
 dt.to_csv("Scraping/data_"+str(wk)+'.csv', index= False)
