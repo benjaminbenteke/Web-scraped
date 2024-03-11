@@ -108,7 +108,7 @@ else:
     print("Div with the specified class not found.")
     
 
-
+urls= [urls[2]] # To select the recent date.
 
 def extract_table_data(url, csv_writer,table):
     url_path = urlparse(url).path
