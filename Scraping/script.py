@@ -81,7 +81,7 @@ if div_with_urls:
 else:
     print("Div with the specified class not found.")
     
-wk= weeks[-1]# weeks[2:][0]
+wk= weeks[2:][0]
 
 urls= []
 if div_with_urls:
@@ -199,8 +199,7 @@ dt.sort_values(by='Week', ascending=False)
 dt = dt[dt['Week'] == wk]
 
 #dt.to_csv("./new_files/"+"data_"+str(wk)+'.csv', index= False)
-# dt.to_csv("Scraping/data_"+str(wk)+'.csv', index= False)
-dt.to_csv("./data_"+"week"+str(wk)+'.csv', index= False)
+dt.to_csv("Scraping/data_"+str(wk)+'.csv', index= False)
 
 past_data= pd.read_csv("Scraping/RVDSS_all_Canada.csv")
 
