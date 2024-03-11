@@ -80,8 +80,9 @@ if div_with_urls:
             print(href)
 else:
     print("Div with the specified class not found.")
-    
-wk= weeks[2:][0]
+
+index_week= 2
+wk= weeks[index_week:][0]
 
 urls= []
 if div_with_urls:
@@ -108,7 +109,7 @@ else:
     print("Div with the specified class not found.")
     
 
-urls= [urls[2]] # To select the recent date.
+urls= [urls[index_week]] # To select the recent date.
 
 def extract_table_data(url, csv_writer,table):
     url_path = urlparse(url).path
