@@ -217,6 +217,13 @@ Province_list= list(past_data[['province']].value_counts().keys())
 Province_list= [f[0] for f in Province_list]
 Province_list.sort()
 
+def convert(dic):
+    for key in dic.keys():
+        v= dic[key]
+#         print(dic[key])
+        dic[key]= [v]
+    return dic
+
 def custom_merge(df1, df2):
     # df1: former dataset
     # df2: new dataset
@@ -229,12 +236,13 @@ def custom_merge(df1, df2):
             d['season']= s
             d['phufull']= prov
             d['year']= s[5:]
-            df1= df1.append(d, ignore_index=True)
+            d= pd.DataFrame(convert(d))
+            df1= pd.concat([df1, d], ignore_index=True)#df1.append(d, ignore_index=True)
         
-#         print(d)
-#         break
+
     df1 = df1.sort_values(by='province', ascending=True)
     return df1
+
 
 dtt= custom_merge(past_data, dt)
 
