@@ -242,7 +242,7 @@ dt.insert(6, 'date', d_new)
 dt.to_csv("./"+"/data_"+str(wk)+'.csv', index= False)
 
 
-past_data= pd.read_csv("./RVDSS_all_Canada.csv")
+past_data= pd.read_csv("RVDSS_all_Canada.csv")
 Province_list= list(past_data[['province']].value_counts().keys())
 Province_list= [f[0] for f in Province_list]
 Province_list.sort()
