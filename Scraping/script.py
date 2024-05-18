@@ -239,10 +239,14 @@ dt= dt.rename(columns={'Reporting Laboratory': 'province'})
 d_new= [get_date(urls[0]) for _ in range(len(dt))]
 dt.insert(6, 'date', d_new)
 
-dt.to_csv("data_"+str(wk)+'.csv', index= False)
+dt.to_csv("Scraping/data_"+str(wk)+'.csv', index= False)
+
+past_data= pd.read_csv("Scraping/RVDSS_all_Canada.csv")
+
+# dt.to_csv("data_"+str(wk)+'.csv', index= False)
 
 
-past_data= pd.read_csv("RVDSS_all_Canada.csv")
+# past_data= pd.read_csv("RVDSS_all_Canada.csv")
 Province_list= list(past_data[['province']].value_counts().keys())
 Province_list= [f[0] for f in Province_list]
 Province_list.sort()
@@ -281,7 +285,8 @@ duplicates_mask = dtt.duplicated()
 duplicated_rows = dtt[duplicates_mask]
 
 
-dtt.to_csv("RVDSS_all_Canada"+".csv", index= False)
+# dtt.to_csv("RVDSS_all_Canada"+".csv", index= False)
+dtt.to_csv("Scraping/"+"RVDSS_all_Canada"+".csv" , index= False)
 
 ## END
 
