@@ -239,7 +239,7 @@ dt= dt.rename(columns={'Reporting Laboratory': 'province'})
 d_new= [get_date(urls[0]) for _ in range(len(dt))]
 dt.insert(6, 'date', d_new)
 
-dt.to_csv("/data_"+str(wk)+'.csv', index= False)
+dt.to_csv("data_"+str(wk)+'.csv', index= False)
 
 
 past_data= pd.read_csv("RVDSS_all_Canada.csv")
