@@ -36,7 +36,7 @@ def get_date(url):
         return formatted_date
 
 #############
-url= "https://www.canada.ca/en/public-health/services/surveillance/respiratory-virus-detections-canada.html"
+url= "https://health-infobase.canada.ca/src/data/respiratory-virus-detections/" #"https://www.canada.ca/en/public-health/services/surveillance/respiratory-virus-detections-canada.html"
 #############
 
 links= ["https://www.canada.ca/en/public-health/services/surveillance/respiratory-virus-detections-canada/2013-2014.html",
@@ -70,7 +70,7 @@ dictt= {
 }
 
 
-url= links[-1]
+url= "https://health-infobase.canada.ca/src/data/respiratory-virus-detections/" #links[-1]
 
 year= None
 
